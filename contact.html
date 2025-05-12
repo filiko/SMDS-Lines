@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SM Distribution & Shipping Lines</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-banner {
+            height: 400px;
+            background-image: linear-gradient(rgba(20, 41, 146, 0.8), rgba(20, 41, 146, 0.8)), url('https://www.smdslines.com/wp-content/uploads/2025/03/AdobeStock_316681654-1-scaled-e1741203170387.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            margin: 0 10px;
+        }
+        
+        .breadcrumb span {
+            color: var(--secondary-color);
+        }
+        
+        .contact-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .contact-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-info-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-info-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-info-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-form-map {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(20, 41, 146, 0.1);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            min-height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-options {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-option {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-option input {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-form-map {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-info-item {
+                padding: 20px;
+            }
+            
+            .info-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="faqs.html">FAQ's</a></li>
+                    <li><a href="get-quote.html">Get a Quote</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Contact Us</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-intro">
+                <h2>Get In Touch With Us</h2>
+                <p>Have questions about our shipping services or need assistance with your logistics needs? Our dedicated team is ready to help. Contact us through any of the methods below or fill out our contact form.</p>
+            </div>
+            
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Location</h3>
+                    <p>123 Shipping Lane<br>Houston, TX 77001<br>United States</p>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                    <p>Monday - Friday: 9am - 5pm<br>Saturday: 9am - 1pm</p>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Address</h3>
+                    <div class="info-content">
+                        <h3>Email Address</h3>
+                        <p>silas@smdslines.com<br>
+                        info@smdslines.com<br>
+                        customerservice@smdslines.com</p>
+                    </div>
+                    <p>We aim to respond to all inquiries within 24 hours</p>
+                </div>
+            </div>
+            
+            <div class="contact-form-map">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>How would you like to be contacted?*</label>
+                            <div class="contact-options">
+                                <div class="contact-option">
+                                    <input type="radio" id="contactEmail" name="contactMethod" value="email" checked>
+                                    <label for="contactEmail">Email</label>
+                                </div>
+                                <div class="contact-option">
+                                    <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+                                    <label for="contactPhone">Phone</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject*</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Shipping Quote">Shipping Quote</option>
+                                <option value="Tracking">Shipment Tracking</option>
+                                <option value="Customer Support">Customer Support</option>
+                                <option value="Partnership">Partnership Opportunities</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221770.85850346744!2d-95.52230424763423!3d29.756795239417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX%2C%20USA!5e0!3m2!1sen!2suk!4v1649172779523!5m2!1sen!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget">
+                        <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo" class="footer-logo">
+                        <p>Trusted logistics for seamless global shipping. Connecting businesses worldwide with reliable, efficient, and secure shipping solutions.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="faqs.html">FAQ's</a></li>
+                            <li><a href="get-quote.html">Get a Quote</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Our Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                            <li><a href="procurement.html">Procurement</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Shipping Lane, Houston, TX 77001</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope"></i> silas@smdslines.com</li>
+                            <li><i class="fas fa-envelope"></i> info@smdslines.com</li>
+                            <li><i class="fas fa-envelope"></i> customerservice@smdslines.com</li>
+                            <li><i class="fas fa-clock"></i> Monday-Friday: 9am-5pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 SM Distribution & Shipping Lines. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send form data to a server here
+            // For demonstration purposes, we'll just show a success message
+            
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            
+            // Change button text and disable it
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission delay
+            setTimeout(function() {
+                // Create success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.style.padding = '30px';
+                successMessage.style.backgroundColor = '#e8f5e9';
+                successMessage.style.color = '#388e3c';
+                successMessage.style.borderRadius = '10px';
+                successMessage.style.textAlign = 'center';
+                successMessage.style.fontWeight = 'bold';
+                successMessage.style.marginTop = '20px';
+                successMessage.innerHTML = '<i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 15px; display: block;"></i><h3 style="margin-bottom: 10px;">Message Sent Successfully!</h3><p>Thank you for reaching out to us. A member of our team will contact you shortly.</p>';
+                
+                // Replace form with success message
+                form.parentNode.replaceChild(successMessage, form);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

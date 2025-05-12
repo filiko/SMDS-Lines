@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Freight Services - SM Distribution & Shipping Lines</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-banner {
+            height: 400px;
+            background-image: url('https://www.smdslines.com/wp-content/uploads/2025/03/ocean-freight-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .service-section {
+            padding: 100px 0;
+        }
+
+        .service-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-types {
+            background: var(--gray-color);
+            padding: 80px 0;
+        }
+
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .type-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .type-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .type-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .type-card:hover .type-image img {
+            transform: scale(1.1);
+        }
+
+        .type-content {
+            padding: 30px;
+        }
+
+        .type-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .benefit-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefit-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer Styles */
+        .footer-widget img {
+            max-height: 70px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            color: var(--light-color);
+        }
+
+        .contact-info li i {
+            margin-right: 10px;
+            margin-top: 5px;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 992px) {
+            .service-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .type-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../SMDS_Logo.jpg" alt="SM Distribution & Shipping Lines Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="drayage.html">Drayage</a></li>
+                            <li><a href="warehousing.html">Warehousing</a></li>
+                            <li><a href="transloading.html">Transloading</a></li>
+                            <li><a href="supply-chain.html">Supply Chain Solutions</a></li>
+                            <li><a href="yard-services.html">Yard Services</a></li>
+                            <li><a href="procurement.html">Procurement</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../faqs.html">FAQ's</a></li>
+                    <li><a href="../get-quote.html">Get a Quote</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="container">
+            <h1 class="page-title">Ocean Freight Services</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="#services">Services</a> / <span>Ocean Freight</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ocean Freight Service Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-intro">
+                <h2>Trusted Ocean Freight Forwarder for Smooth Global Shipping</h2>
+                <p>SM Distribution & Shipping Lines offers comprehensive ocean freight solutions designed to meet your international shipping needs. With our extensive network of carriers and ports worldwide, we ensure your cargo reaches its destination safely, on time, and at competitive rates.</p>
+            </div>
+
+            <div class="service-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Global Coverage</h3>
+                    <p>Access to major shipping routes and ports worldwide, ensuring comprehensive global coverage for your cargo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Reliable Schedules</h3>
+                    <p>Regular sailing schedules and dependable transit times to help you plan your shipments effectively.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cargo Security</h3>
+                    <p>Advanced tracking systems and secure handling procedures to protect your valuable shipments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Types Section -->
+    <section class="service-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Ocean Freight Services</h2>
+                <p>Comprehensive solutions tailored to your shipping needs</p>
+            </div>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/fcl-shipping.jpg" alt="FCL Shipping">
+                    </div>
+                    <div class="type-content">
+                        <h3>Full Container Load (FCL)</h3>
+                        <p>Dedicated container shipping for large volume cargo, offering cost-effective and secure transportation for your exclusive use.</p>
+                        <ul>
+                            <li>20ft, 40ft, and 40ft High Cube containers</li>
+                            <li>Direct routing options</li>
+                            <li>Sealed container security</li>
+                            <li>Door-to-door service available</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="type-card">
+                    <div class="type-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/lcl-shipping.jpg" alt="LCL Shipping">
+                    </div>
+                    <div class="type-content">
+                        <h3>Less than Container Load (LCL)</h3>
+                        <p>Flexible shipping solutions for smaller cargo volumes, allowing you to pay only for the space you need.</p>
+                        <ul>
+                            <li>Cost-effective for smaller shipments</li>
+                            <li>Regular consolidation services</li>
+                            <li>Flexible volume options</li>
+                            <li>Worldwide destinations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-content">
+                    <h2>Why Choose Our Ocean Freight Services?</h2>
+                    <ul class="benefit-list">
+                        <li>Competitive rates through strong carrier relationships</li>
+                        <li>Experienced team providing personalized service</li>
+                        <li>Advanced cargo tracking and monitoring</li>
+                        <li>Comprehensive insurance options</li>
+                        <li>Customs clearance assistance</li>
+                        <li>Flexible payment terms</li>
+                        <li>Sustainable shipping practices</li>
+                        <li>24/7 customer support</li>
+                    </ul>
+                </div>
+                <div class="benefit-image">
+                    <img src="https://www.smdslines.com/wp-content/uploads/2025/03/ocean-freight-benefits.jpg" alt="Ocean Freight Benefits">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Ship Your Cargo?</h2>
+            <p>Contact us today to discuss your ocean freight requirements and get a competitive quote for your shipment.</p>
+            <a href="../contact.html" class="btn btn-light">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-contact-bar">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <div class="label">Phone:</div>
+                            <div class="value">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div class="label">Email:</div>
+                            <div class="value">info@smdslines.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <div class="label">Address:</div>
+                            <div class="value">123 Shipping Lane, Houston, TX 77001</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <div class="label">Opening Hours:</div>
+                            <div class="value">Monday-Friday: 9am-5pm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-grid">
+                    <div class="footer-widget">
+                        <img src="../SMDS_Logo.jpg" alt="SM Distribution & Shipping Lines Logo">
+                        <p>Trusted logistics for seamless global shipping. Connecting businesses worldwide with reliable, efficient, and secure shipping solutions.</p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Latest News</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">New Shipping Routes Announced</a></li>
+                            <li><a href="#">Sustainability Initiatives Launch</a></li>
+                            <li><a href="#">Customer Success Stories</a></li>
+                            <li><a href="#">Industry Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Our Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                            <li><a href="procurement.html">Procurement</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Contact Us</h3>
+                        <ul class="footer-links">
+                            <li><a href="mailto:silas@smdslines.com">silas@smdslines.com</a></li>
+                            <li><a href="mailto:info@smdslines.com">info@smdslines.com</a></li>
+                            <li><a href="mailto:customerservice@smdslines.com">customerservice@smdslines.com</a></li>
+                            <li><a href="../contact.html">Contact Form</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 SM Distribution & Shipping Lines. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+</body>
+</html>

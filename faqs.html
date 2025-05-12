@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - SM Distribution & Shipping Lines</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-banner {
+            height: 400px;
+            background-image: linear-gradient(rgba(20, 41, 146, 0.8), rgba(20, 41, 146, 0.8)), url('https://www.smdslines.com/wp-content/uploads/2025/03/AdobeStock_316681654-1-scaled-e1741203170387.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            margin: 0 10px;
+        }
+        
+        .breadcrumb span {
+            color: var(--secondary-color);
+        }
+        
+        .faq-section {
+            padding: 100px 0;
+        }
+        
+        .faq-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .category-sidebar {
+            width: 300px;
+            padding-right: 30px;
+        }
+        
+        .category-title {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .category-list li {
+            margin-bottom: 15px;
+        }
+        
+        .category-list a {
+            display: block;
+            padding: 15px;
+            background-color: #f9f9f9;
+            color: var(--primary-color);
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .category-list a:hover,
+        .category-list a.active {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .faq-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .faq-category {
+            margin-bottom: 40px;
+        }
+        
+        .category-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .category-header h3 {
+            margin: 0;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .faq-question.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-question i {
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            background-color: white;
+        }
+        
+        .faq-answer-content {
+            padding: 20px;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .faq-container {
+                flex-direction: column;
+            }
+            
+            .category-sidebar {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .category-header h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="faqs.html" class="active">FAQ's</a></li>
+                    <li><a href="get-quote.html">Get a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="container">
+            <h1 class="page-title">Frequently Asked Questions</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>FAQ's</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Answers to Your Freight Shipping Questions</h2>
+                <p>Find answers to common questions about our shipping and logistics services</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Category Sidebar -->
+                <div class="category-sidebar">
+                    <h3 class="category-title">Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="#air-freight" class="active">Air Freight</a></li>
+                        <li><a href="#ocean-freight">Ocean Freight</a></li>
+                        <li><a href="#land-freight">Land Freight</a></li>
+                        <li><a href="#express-shipping">Express Shipping</a></li>
+                        <li><a href="#customs-documentation">Customs & Documentation</a></li>
+                        <li><a href="#general-questions">General Questions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- FAQ Content -->
+                <div class="faq-content">
+                    <!-- Air Freight Category -->
+                    <div id="air-freight" class="faq-category">
+                        <div class="category-header">
+                            <h3>Air Freight</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What factors affect air freight rates?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Several factors influence air freight rates, including:</p>
+                                    <ul>
+                                        <li>Weight and dimensions of the cargo (volumetric or actual weight, whichever is greater)</li>
+                                        <li>Distance between origin and destination</li>
+                                        <li>Type of goods being shipped</li>
+                                        <li>Urgency of delivery (express vs. standard service)</li>
+                                        <li>Seasonal demand and capacity constraints</li>
+                                        <li>Fuel surcharges</li>
+                                        <li>Security surcharges</li>
+                                        <li>Special handling requirements</li>
+                                    </ul>
+                                    <p>Our team can provide detailed quotes based on your specific shipment needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does air freight typically take?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Air freight is the fastest shipping method available for international cargo. Transit times typically range from 1-6 days depending on:</p>
+                                    <ul>
+                                        <li>Distance between origin and destination</li>
+                                        <li>Availability of direct flights vs. connections</li>
+                                        <li>Customs clearance processes at origin and destination</li>
+                                        <li>Type of service selected (express, standard, deferred)</li>
+                                    </ul>
+                                    <p>For precise transit time estimates for your specific route, please contact our customer service team.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the maximum weight for air freight?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>The maximum weight for air freight varies depending on:</p>
+                                    <ul>
+                                        <li>Aircraft type being used</li>
+                                        <li>Cargo door dimensions</li>
+                                        <li>Weight restrictions at origin and destination airports</li>
+                                    </ul>
+                                    <p>Most commercial aircraft can accommodate items up to 10,000 kg (22,046 lbs) per piece, but specialized cargo aircraft can handle much larger shipments. For oversized or extremely heavy cargo, we can arrange specialized solutions including charter flights if necessary.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ocean Freight Category -->
+                    <div id="ocean-freight" class="faq-category">
+                        <div class="category-header">
+                            <h3>Ocean Freight</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is a freight carrier?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>A freight carrier is a company that transports cargo from one location to another. In ocean shipping, freight carriers typically operate vessels that carry containerized cargo, bulk cargo, or other types of goods across international waters.</p>
+                                    <p>These carriers may be:</p>
+                                    <ul>
+                                        <li><strong>Ocean carriers/shipping lines:</strong> Companies that own or charter vessels that transport cargo via sea routes</li>
+                                        <li><strong>NVOCC (Non-Vessel Operating Common Carrier):</strong> Companies that don't own vessels but purchase space from shipping lines to resell to shippers</li>
+                                    </ul>
+                                    <p>SM Distribution & Shipping Lines works with reliable carrier partners to ensure your ocean freight is handled efficiently and arrives safely at its destination.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the notify party on a bill of lading?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>The notify party on a bill of lading is the person or company that should be notified when the shipment arrives at its destination. This party is typically responsible for:</p>
+                                    <ul>
+                                        <li>Receiving notification that the cargo has arrived at the destination port</li>
+                                        <li>Arranging for customs clearance (in some cases)</li>
+                                        <li>Coordinating final delivery of the goods</li>
+                                    </ul>
+                                    <p>The notify party may be the same as the consignee (the receiver of the goods) or could be a separate entity such as a customs broker, freight forwarder, or agent acting on behalf of the consignee. Including accurate notify party information on the bill of lading is important to ensure smooth delivery of your shipment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is a terminal in ocean shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>A terminal in ocean shipping refers to a designated area within a port where cargo is loaded onto and discharged from vessels. These facilities are critical nodes in the global supply chain and typically include:</p>
+                                    <ul>
+                                        <li><strong>Container terminals:</strong> Specialized facilities for handling standardized shipping containers</li>
+                                        <li><strong>Bulk terminals:</strong> Designed for handling loose cargo like grain, coal, or minerals</li>
+                                        <li><strong>Break-bulk terminals:</strong> For cargo that is too large or irregularly shaped for containers</li>
+                                        <li><strong>Ro-Ro (Roll-on/Roll-off) terminals:</strong> For vehicles and rolling cargo</li>
+                                    </ul>
+                                    <p>Terminals are equipped with cranes, handling equipment, storage areas, and systems for processing cargo efficiently. They also serve as temporary storage locations while shipments await customs clearance or onward transportation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Land Freight Category -->
+                    <div id="land-freight" class="faq-category">
+                        <div class="category-header">
+                            <h3>Land Freight</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the difference between FTL and LTL shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>FTL (Full Truckload):</strong> This refers to shipments that require an entire truck's cargo space. The truck carries cargo for only one shipper and goes directly from origin to destination without additional stops for loading or unloading.</p>
+                                    <p><strong>LTL (Less Than Truckload):</strong> This refers to shipments that don't require an entire truck's capacity. Multiple shipments from different shippers share space on the same truck. The carrier consolidates various shipments going in the same direction to optimize space and costs.</p>
+                                    <p><strong>Key differences:</strong></p>
+                                    <ul>
+                                        <li><strong>Cost:</strong> FTL typically costs more but is charged per mile, while LTL is usually charged by weight and freight class</li>
+                                        <li><strong>Transit time:</strong> FTL is faster with direct delivery, while LTL involves multiple stops and handling</li>
+                                        <li><strong>Handling:</strong> FTL cargo is touched less, reducing the risk of damage</li>
+                                        <li><strong>Ideal shipment size:</strong> FTL is best for large shipments (over 10,000 lbs or 10+ pallets), while LTL is economical for smaller shipments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How are trucking rates calculated?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Trucking rates are calculated based on several factors:</p>
+                                    <ul>
+                                        <li><strong>Distance:</strong> The mileage between pickup and delivery locations</li>
+                                        <li><strong>Weight/volume:</strong> The size and weight of your shipment</li>
+                                        <li><strong>Freight class:</strong> For LTL shipments, based on density, value, and handling requirements</li>
+                                        <li><strong>Accessorial charges:</strong> Additional services like liftgate delivery, inside delivery, limited access locations, etc.</li>
+                                        <li><strong>Fuel surcharges:</strong> Adjustments based on current fuel prices</li>
+                                        <li><strong>Market conditions:</strong> Supply and demand for trucking capacity in specific lanes</li>
+                                        <li><strong>Service speed:</strong> Expedited vs. standard service</li>
+                                    </ul>
+                                    <p>For FTL shipments, rates are typically quoted per mile or as a flat rate for the entire load. For LTL shipments, rates consider freight class, weight, and distance with various discounts applied based on volume and carrier agreements.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I track my land freight shipment?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>At SM Distribution & Shipping Lines, we offer several methods for tracking your land freight shipments:</p>
+                                    <ul>
+                                        <li><strong>Online tracking portal:</strong> Access our client portal with your shipment reference number or booking ID to view real-time status updates</li>
+                                        <li><strong>Email notifications:</strong> Set up automated alerts for key milestones in your shipment's journey</li>
+                                        <li><strong>Customer service contact:</strong> Reach out to your designated account manager or our customer service team for updates</li>
+                                        <li><strong>Mobile app:</strong> Download our mobile application for on-the-go tracking access</li>
+                                    </ul>
+                                    <p>Our advanced tracking systems provide information on pickup confirmation, estimated transit times, current location, and delivery status. For high-value or time-sensitive shipments, we can arrange enhanced tracking with more frequent status updates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Express Shipping Category -->
+                    <div id="express-shipping" class="faq-category">
+                        <div class="category-header">
+                            <h3>Express Shipping</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is express shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Express shipping is a premium, time-definite shipping service designed for urgent or time-sensitive cargo. It offers:</p>
+                                    <ul>
+                                        <li>Fastest possible transit times</li>
+                                        <li>Guaranteed delivery dates and times</li>
+                                        <li>Priority handling at all points of the supply chain</li>
+                                        <li>Enhanced tracking and visibility</li>
+                                        <li>Dedicated customer service</li>
+                                    </ul>
+                                    <p>Our express shipping services utilize the fastest transportation modes and routes, often combining air freight with expedited ground transportation to ensure your shipment arrives as quickly as possible. This service is ideal for critical parts, perishable goods, high-value items, or any situation where time is of the essence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the maximum weight for express shipments?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>For our express shipping services:</p>
+                                    <ul>
+                                        <li>Individual package weight typically ranges up to 150 lbs (68 kg)</li>
+                                        <li>Total shipment weight can be up to 2,200 lbs (1,000 kg)</li>
+                                        <li>For heavier express needs, we offer specialized solutions</li>
+                                    </ul>
+                                    <p>For express shipments exceeding these standard limits, we provide custom express freight solutions including dedicated vehicles, air charter services, or specialized handling options. Weight restrictions may vary based on origin, destination, and service level selected.</p>
+                                    <p>Our team can help determine the most appropriate express solution for your specific requirements, regardless of weight or dimensions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How much does express shipping cost compared to standard shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Express shipping generally costs more than standard shipping options due to the premium nature of the service. The price difference varies depending on several factors:</p>
+                                    <ul>
+                                        <li>Express services typically cost 30-100% more than standard services</li>
+                                        <li>The price difference increases with distance and weight</li>
+                                        <li>Guaranteed delivery times add to the premium</li>
+                                        <li>International express shipping may be 2-3 times the cost of standard international shipping</li>
+                                    </ul>
+                                    <p>While express shipping commands a higher price, the value it provides through faster transit times, guaranteed delivery windows, and priority handling can be essential for time-critical shipments where the cost of delays would exceed the premium paid for express service.</p>
+                                    <p>We recommend conducting a cost-benefit analysis for your specific situation to determine if express shipping is the right choice. Our team can provide detailed quotes for both express and standard options to help you make an informed decision.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Customs & Documentation Category -->
+                    <div id="customs-documentation" class="faq-category">
+                        <div class="category-header">
+                            <h3>Customs & Documentation</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What documents are required for international shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>The essential documents required for international shipping typically include:</p>
+                                    <ul>
+                                        <li><strong>Commercial Invoice:</strong> Details of the goods being shipped, including description, value, quantity, and parties involved</li>
+                                        <li><strong>Packing List:</strong> Itemized list of package contents with weights and dimensions</li>
+                                        <li><strong>Bill of Lading (B/L) or Air Waybill (AWB):</strong> Transport document serving as receipt of goods, evidence of contract of carriage, and document of title</li>
+                                        <li><strong>Certificate of Origin:</strong> Document certifying the country where goods were manufactured or produced</li>
+                                        <li><strong>Customs Declaration Forms:</strong> Varies by country but typically includes information on goods for customs clearance</li>
+                                    </ul>
+                                    <p>Depending on the nature of goods and country requirements, additional documents may include:</p>
+                                    <ul>
+                                        <li>Import/Export Licenses</li>
+                                        <li>Dangerous Goods Declaration</li>
+                                        <li>Phytosanitary or Health Certificates</li>
+                                        <li>Inspection Certificates</li>
+                                        <li>Insurance Certificate</li>
+                                    </ul>
+                                    <p>Our team can provide guidance on the specific documentation required for your shipment to ensure smooth customs clearance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do customs duties and taxes work?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Customs duties and taxes are charges imposed by governments on imported goods. Here's how they typically work:</p>
+                                    <p><strong>Customs Duties:</strong></p>
+                                    <ul>
+                                        <li>Calculated based on the classification of goods under the Harmonized System (HS code)</li>
+                                        <li>Rates vary by product type and country of origin</li>
+                                        <li>May be assessed as a percentage of the goods' value (ad valorem) or as a specific amount per unit</li>
+                                        <li>Preferential rates may apply under free trade agreements</li>
+                                    </ul>
+                                    <p><strong>Import Taxes:</strong></p>
+                                    <ul>
+                                        <li>Value Added Tax (VAT) or Goods and Services Tax (GST) is applied to the value of goods plus duties</li>
+                                        <li>Rates vary by country (typically 5-25%)</li>
+                                        <li>May be recoverable for business importers in some jurisdictions</li>
+                                    </ul>
+                                    <p><strong>Other Fees:</strong></p>
+                                    <ul>
+                                        <li>Merchandise Processing Fees</li>
+                                        <li>Harbor Maintenance Fees</li>
+                                        <li>Excise Taxes for specific goods</li>
+                                        <li>Agricultural inspection fees</li>
+                                    </ul>
+                                    <p>Payment responsibility is typically determined by the incoterms used in the transaction (e.g., DDP means the seller pays duties, while DAP means the buyer pays). Our customs brokerage services can help you navigate these complexities and manage the duty/tax payment process efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What are incoterms and how do they affect shipping?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Incoterms (International Commercial Terms) are standardized trade terms published by the International Chamber of Commerce (ICC) that define the responsibilities of buyers and sellers in international transactions. They specify:</p>
+                                    <ul>
+                                        <li>Who arranges and pays for transportation</li>
+                                        <li>Where risk transfers from seller to buyer</li>
+                                        <li>Who is responsible for insurance</li>
+                                        <li>Who handles customs clearance and pays duties/taxes</li>
+                                        <li>Who bears the cost of loading/unloading</li>
+                                    </ul>
+                                    <p><strong>Common Incoterms:</strong></p>
+                                    <ul>
+                                        <li><strong>EXW (Ex Works):</strong> Buyer assumes all costs and risks from the seller's premises</li>
+                                        <li><strong>FOB (Free on Board):</strong> Seller delivers goods on board the vessel, risk transfers when goods cross the ship's rail</li>
+                                        <li><strong>CIF (Cost, Insurance, Freight):</strong> Seller pays for shipping and insurance to the destination port, but risk transfers when goods are loaded</li>
+                                        <li><strong>DAP (Delivered at Place):</strong> Seller delivers to the buyer's specified location, buyer handles import clearance</li>
+                                        <li><strong>DDP (Delivered Duty Paid):</strong> Maximum obligation for seller, who pays all costs including duties to deliver to the buyer's premises</li>
+                                    </ul>
+                                    <p>The choice of incoterm significantly impacts shipping arrangements, costs, and responsibilities. It's important to clearly specify which incoterm applies to your transaction to avoid misunderstandings and disputes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- General Questions Category -->
+                    <div id="general-questions" class="faq-category">
+                        <div class="category-header">
+                            <h3>General Questions</h3>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I get a shipping quote?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Getting a shipping quote from SM Distribution & Shipping Lines is simple and can be done through several methods:</p>
+                                    <ul>
+                                        <li><strong>Online Quote Form:</strong> Visit our <a href="get-quote.html">Get a Quote</a> page and fill out our simple online form with your shipment details</li>
+                                        <li><strong>Contact Customer Service:</strong> Call our customer service team at +1 (555) 123-4567 for immediate assistance</li>
+                                        <li><strong>Email Request:</strong> Send your quote request to quotes@smdslines.com with your shipment details</li>
+                                        <li><strong>Account Manager:</strong> Existing customers can contact their dedicated account manager directly</li>
+                                    </ul>
+                                    <p>To ensure an accurate quote, please have the following information ready:</p>
+                                    <ul>
+                                        <li>Origin and destination addresses</li>
+                                        <li>Shipment dimensions and weight</li>
+                                        <li>Cargo type and description</li>
+                                        <li>Preferred shipping timeline</li>
+                                        <li>Any special handling requirements</li>
+                                    </ul>
+                                    <p>We aim to provide quotes within 2 hours during business hours for standard requests.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How can I track my shipment?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Tracking your shipment with SM Distribution & Shipping Lines is convenient through multiple channels:</p>
+                                    <ul>
+                                        <li><strong>Online Tracking Tool:</strong> Enter your tracking number on our website's tracking page</li>
+                                        <li><strong>Customer Portal:</strong> Log in to your account on our customer portal for detailed tracking information and shipment history</li>
+                                        <li><strong>Email Updates:</strong> Opt-in for automated email notifications at key milestones</li>
+                                        <li><strong>Customer Service:</strong> Contact our team at +1 (555) 123-4567 or support@smdslines.com</li>
+                                    </ul>
+                                    <p>Our tracking system provides real-time updates on your shipment's status, location, estimated delivery time, and any potential delays. For high-value or time-critical shipments, we offer enhanced tracking options with more detailed information and increased frequency of updates.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What insurance options do you offer for shipments?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>We offer comprehensive insurance options to protect your cargo during transit:</p>
+                                    <ul>
+                                        <li><strong>All-Risk Coverage:</strong> Protects against physical loss or damage from external causes</li>
+                                        <li><strong>Named Perils Insurance:</strong> Covers specific risks listed in the policy</li>
+                                        <li><strong>Total Loss Only:</strong> A more economical option covering only complete loss of shipment</li>
+                                        <li><strong>Custom Insurance Solutions:</strong> Tailored coverage for specialized cargo or high-value goods</li>
+                                    </ul>
+                                    <p>Insurance premiums typically range from 0.3% to 1% of the cargo value, depending on the nature of goods, shipping route, and coverage level. We recommend insuring your shipment for its full commercial invoice value plus 10% to cover additional costs.</p>
+                                    <p>While carrier liability does exist, it's often limited and may not fully cover the value of your goods. Our insurance options provide peace of mind and financial protection throughout the shipping process.</p>
+                                    <p>Contact our team for a detailed insurance quote and to discuss the best options for your specific shipment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our team of logistics experts is ready to help you with any shipping needs or questions you may have.</p>
+            <a href="contact.html" class="btn btn-light">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget">
+                        <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo" class="footer-logo">
+                        <p>Trusted logistics for seamless global shipping. Connecting businesses worldwide with reliable, efficient, and secure shipping solutions.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="faqs.html">FAQ's</a></li>
+                            <li><a href="get-quote.html">Get a Quote</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Our Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                            <li><a href="procurement.html">Procurement</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Shipping Lane, Houston, TX 77001</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope"></i> info@smdslines.com</li>
+                            <li><i class="fas fa-clock"></i> Monday-Friday: 9am-5pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 SM Distribution & Shipping Lines. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+                    
+                    // Toggle answer visibility
+                    const answer = this.nextElementSibling;
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                    } else {
+                        answer.classList.add('active');
+                    }
+                });
+            });
+            
+            // Category navigation
+            const categoryLinks = document.querySelectorAll('.category-list a');
+            
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    categoryLinks.forEach(cat => cat.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Get the target category
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetCategory = document.getElementById(targetId);
+                    
+                    // Scroll to the target category
+                    if (targetCategory) {
+                        window.scrollTo({
+                            top: targetCategory.offsetTop - 120,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
