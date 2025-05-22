@@ -12,16 +12,16 @@
     <style>
         /* Page-specific styles */
         .page-banner {
-            height: 400px;
-            background-image: linear-gradient(rgba(20, 41, 146, 0.8), rgba(20, 41, 146, 0.8)), url('https://www.smdslines.com/wp-content/uploads/2025/03/AdobeStock_316681654-1-scaled-e1741203170387.jpeg');
-            background-size: cover;
+            height: 340px !important;
+            margin-top: 0 !important;
+            background-image: linear-gradient(rgba(20, 41, 146, 0.8), rgba(20, 41, 146, 0.8)), url('https://images.unsplash.com/photo-1631388167556-55a285cc86a5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            ackground-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            margin-top: 100px;
         }
         
         .page-title {
@@ -195,6 +195,14 @@
                 padding: 30px 20px;
             }
         }
+        
+        .logo img {
+            content:url('SMDS_Logo.jpg');
+        }
+        
+        header, .footer-top, .footer-bottom, .footer-widget, .footer-content, .footer-section, .footer-grid, .footer-logo, .footer-links, .contact-info, .social-icons, .footer-bottom p, .footer-widget p, .footer-widget a, .footer-links a, .contact-info li {
+            color: #fff !important;
+        }
     </style>
 </head>
 <body>
@@ -202,7 +210,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo">
+                <img src="SMDS_Logo.jpg" alt="SM Distribution & Shipping Lines Logo">
             </div>
             <nav>
                 <ul class="nav-menu">
@@ -211,9 +219,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="air-freight.html">Air Freight</a></li>
-                            <li><a href="express-freight.html">Express Freight</a></li>
-                            <li><a href="land-freight.html">Land Freight</a></li>
+                            <li><a href="services/drayage.html">Drayage</a></li>
+                            <li><a href="services/warehousing.html">Warehousing</a></li>
+                            <li><a href="services/transloading.html">Transloading</a></li>
+                            <li><a href="services/supply-chain.html">Supply Chain Solutions</a></li>
+                            <li><a href="services/yard-services.html">Yard Services</a></li>
+                            <li><a href="services/procurement.html">Procurement</a></li>
+                            <li><a href="services/ocean-freight.html">Ocean Freight</a></li>
+                            <li><a href="services/project-logistics.html">Project Logistics</a></li>
                         </ul>
                     </li>
                     <li><a href="faqs.html">FAQ's</a></li>
@@ -240,16 +253,13 @@
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://www.smdslines.com/wp-content/uploads/slider/cache/01b5a4eb9df8f80202311e2d912f462b/1670507616_13-kartinkin-net-p-logist-kartinki-krasivo-13.jpg" alt="About SM Distribution & Shipping Lines">
+            <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
+                <div class="about-image" style="flex:1; min-width:600px; text-align:center;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222425.4221107552!2d-95.63977905000001!3d29.8174786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1718040000000!5m2!1sen!2sus" width="500" height="500" style="border:0;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);width:100%;max-width:500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="about-text">
-                    <h2>Trusted Logistics for Seamless Global Shipping</h2>
-                    <p>At <strong>SM Distribution & Shipping Lines</strong>, we specialize in providing efficient, secure, and timely shipping solutions to businesses worldwide. With a strong global network and a commitment to excellence, we ensure that your cargo reaches its destination safely and on schedule.</p>
-                    <p>Founded with a vision to revolutionize the logistics industry, we have grown to become a trusted partner for businesses of all sizes, offering comprehensive shipping and distribution services tailored to meet your specific needs.</p>
-                    <p>Our team of experienced professionals is dedicated to providing exceptional service, leveraging industry expertise and cutting-edge technology to streamline your supply chain operations and enhance your business efficiency.</p>
-                    <p>We prioritize customer satisfaction, reliability, and transparency in all our operations, building lasting relationships with our clients based on trust and mutual success.</p>
+                <div class="about-text" style="flex:2; min-width:200px;">
+                    <h2>Trusted Logistics for Global Shipping</h2>
+                    <p>Based out of Houston, SM Distribution & Shipping Lines specializes in global shipping and logistics solutions. We are committed to providing seamless, secure, and efficient transport for businesses and communities worldwide.</p>
                 </div>
             </div>
         </div>
@@ -282,78 +292,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Leadership Team</h2>
-                <p>Meet the Experts Behind Our Success</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/i-2025-03-04T004345.153-122x122.webp" alt="John Smith">
-                    </div>
-                    <div class="member-info">
-                        <h3>John Smith</h3>
-                        <div class="member-position">Chief Executive Officer</div>
-                        <p>With over 20 years of experience in logistics and supply chain management, John leads our company with vision and expertise.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/i-2025-03-02T020459.710-122x122.webp" alt="Sarah Johnson">
-                    </div>
-                    <div class="member-info">
-                        <h3>Sarah Johnson</h3>
-                        <div class="member-position">Operations Director</div>
-                        <p>Sarah ensures operational excellence across all our services, bringing efficiency and innovation to our logistics processes.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/i-2025-03-04T004248.683-e1741291835790-122x122.webp" alt="Michael Brown">
-                    </div>
-                    <div class="member-info">
-                        <h3>Michael Brown</h3>
-                        <div class="member-position">Global Logistics Manager</div>
-                        <p>Michael oversees our international shipping operations, ensuring seamless coordination across our global network.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/i-2025-03-04T004345.153-122x122.webp" alt="David Wilson">
-                    </div>
-                    <div class="member-info">
-                        <h3>David Wilson</h3>
-                        <div class="member-position">Customer Relations Director</div>
-                        <p>David leads our customer service team, ensuring exceptional client experience and building strong relationships.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -369,7 +307,7 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-widget">
-                        <img src="SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo" class="footer-logo">
+                        <img src="SMDS_Logo.jpg" alt="SM Distribution & Shipping Lines Logo" class="footer-logo">
                         <p>Trusted logistics for seamless global shipping. Connecting businesses worldwide with reliable, efficient, and secure shipping solutions.</p>
                         <div class="social-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
