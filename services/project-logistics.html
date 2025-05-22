@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Logistics - SM Distribution & Shipping Lines</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-banner {
+            height: 400px;
+            background-image: linear-gradient(rgba(20, 41, 146, 0.8), rgba(20, 41, 146, 0.8)), url('https://www.smdslines.com/wp-content/uploads/2025/03/project-logistics-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            margin: 0 10px;
+        }
+        
+        .breadcrumb span {
+            color: var(--secondary-color);
+        }
+        
+        .service-section {
+            padding: 100px 0;
+        }
+        
+        .service-intro {
+            margin-bottom: 60px;
+        }
+        
+        .service-intro h2 {
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .service-content-reverse {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl;
+        }
+        
+        .service-content-reverse .content-text {
+            direction: ltr;
+        }
+        
+        .service-image {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .content-text h3 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .content-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .service-features {
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .industry-section {
+            background-color: #f9f9f9;
+            padding: 100px 0;
+        }
+        
+        .industry-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .industry-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .industry-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .industry-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .industry-card:hover .industry-image img {
+            transform: scale(1.1);
+        }
+        
+        .industry-content {
+            padding: 25px;
+        }
+        
+        .industry-content h3 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .project-types {
+            margin-top: 80px;
+        }
+        
+        .project-types h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .type-card {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .type-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--secondary-color);
+        }
+        
+        .type-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .type-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section {
+            background-color: var(--primary-color);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-section {
+            padding: 100px 0;
+        }
+        
+        .gallery-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 992px) {
+            .service-content, 
+            .service-content-reverse {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                direction: ltr;
+            }
+            
+            .types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .service-section,
+            .industry-section,
+            .gallery-section {
+                padding: 60px 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../SDMS_Logo.jpeg" alt="SM Distribution & Shipping Lines Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="air-freight.html">Air Freight</a></li>
+                            <li><a href="express-freight.html">Express Freight</a></li>
+                            <li><a href="land-freight.html">Land Freight</a></li>
+                            <li><a href="ocean-freight.html">Ocean Freight</a></li>
+                            <li><a href="project-logistics.html" class="active">Project Logistics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../faqs.html">FAQ's</a></li>
+                    <li><a href="../get-quote.html">Get a Quote</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="container">
+            <h1 class="page-title">Project Logistics</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <a href="services.html">Services</a> / <span>Project Logistics</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Logistics Service Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-intro">
+                <h2>Strategic Project Logistics Solutions for Complex Cargo Moves</h2>
+                <p>SM Distribution & Shipping Lines is a project logistics expert. We are conveniently located in Houston, Texas, often known as an energy hub in the US. Our differentiating factor lies not only in our knowledge of the energy and freight industry but our unique service offerings that provide advanced logistics solutions for even the most complex projects.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="https://www.smdslines.com/wp-content/uploads/2025/03/project-logistics-1.jpg" alt="Project Logistics">
+                </div>
+                <div class="content-text">
+                    <h3>Global Logistics Services</h3>
+                    <p>SM Distribution & Shipping Lines conducts project logistics, cargo shipping logistics, freight forwarding, heavy freight shipping, and more – servicing various industries globally. We ship heavy equipment where you need it, when you need it.</p>
+                    <p>At SM Distribution & Shipping Lines, we pride ourselves on maintaining expertise as a freight and cargo shipping company. We understand the unique requirements of complex projects and provide tailored solutions to meet your specific needs.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-truck-loading"></i></div>
+                            <div>Heavy equipment shipping</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-chart-network"></i></div>
+                            <div>End-to-end project management</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-plane"></i></div>
+                            <div>Air charter for time-sensitive material</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-content service-content-reverse">
+                <div class="service-image">
+                    <img src="https://www.smdslines.com/wp-content/uploads/2025/03/industrial-projects.jpg" alt="Industrial Projects">
+                </div>
+                <div class="content-text">
+                    <h3>Industrial And Engineering Projects</h3>
+                    <p>SM Distribution & Shipping Lines works with Original Equipment Manufacturers (OEMs) and other material suppliers in every region of the US in serving their project logistics needs.</p>
+                    <p>We ship overseas manufacturing plant and infrastructure facilities. We have experience in shipping heavy equipment and machinery for various industries, including oil and gas, offshore wind farm construction, agriculture, automotive production, aerospace development, and industrial manufacturing using all the latest engineering logistics technology available.</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-industry"></i></div>
+                            <div>Manufacturing plant relocation</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+                            <div>Infrastructure project support</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                            <div>Equipment installation logistics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Sectors Section -->
+    <section class="industry-section">
+        <div class="container">
+            <h2>Industries We Serve</h2>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/oil-gas-industry.jpg" alt="Oil and Gas Industry">
+                    </div>
+                    <div class="industry-content">
+                        <h3>Oil and Gas</h3>
+                        <p>We serve the oil and gas industry with specialized logistics solutions for upstream, midstream, and downstream operations. Our services include shipping of drilling equipment, pipelines, refineries components, and more.</p>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/renewable-energy.jpg" alt="Renewable Energy">
+                    </div>
+                    <div class="industry-content">
+                        <h3>Renewable Energy</h3>
+                        <p>Supporting the alternative energy industry with logistics for wind turbines, solar panels, and other renewable energy equipment to installation sites worldwide.</p>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/marine-industry.jpg" alt="Marine Industry">
+                    </div>
+                    <div class="industry-content">
+                        <h3>Marine and Offshore</h3>
+                        <p>Providing shipping services for marine and offshore projects, including components for shipyards, offshore platforms, and Floating Production Storage Offloading Vessels (FPSOs).</p>
+                    </div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://www.smdslines.com/wp-content/uploads/2025/03/mining-industry.jpg" alt="Mining Industry">
+                    </div>
+                    <div class="industry-content">
+                        <h3>Mining and Extraction</h3>
+                        <p>Handling complex logistics for the mining sector, including heavy machinery, equipment, and infrastructure components for mining operations globally.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-types">
+                <h2>Our Project Logistics Services</h2>
+                <div class="types-grid">
+                    <div class="type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-tape"></i>
+                        </div>
+                        <h3>Export Packing</h3>
+                        <p>Specialized packing services for industrial equipment and oversized cargo, ensuring your valuable assets are protected during transit. We use high-quality materials and techniques to secure your cargo.</p>
+                    </div>
+                    
+                    <div class="type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Customs Brokerage</h3>
+                        <p>Expert customs clearance services to navigate complex international regulations and ensure smooth movement of your cargo across borders with minimal delays.</p>
+                    </div
