@@ -257,8 +257,9 @@ header .container {
 }
 
 .page-banner {
+    background-image: linear-gradient(rgba(220, 220, 223, 0.2), rgba(20, 41, 146, 0.5));
+   
     height: 400px;
-    background-image: url('https://www.smdslines.com/wp-content/uploads/2025/03/ocean-freight-banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -266,7 +267,26 @@ header .container {
     justify-content: center;
     color: white;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+.page-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+}
+
+.breadcrumb a {
+    color: white;
+    margin: 0 10px;
+}
+
+.breadcrumb span {
+    color: var(--secondary-color);
 }
 
 .hero-content {
@@ -804,5 +824,142 @@ footer {
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Service Page Styles */
+.service-section {
+    padding: 100px 0;
+}
+
+.service-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-types {
+    background: var(--gray-color);
+    padding: 80px 0;
+}
+
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.type-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.type-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.type-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.type-card:hover .type-image img {
+    transform: scale(1.1);
+}
+
+.type-content {
+    padding: 30px;
+}
+
+.type-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.benefits-section {
+    padding: 80px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.benefit-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.benefit-list {
+    list-style: none;
+}
+
+.benefit-list li {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.benefit-list li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Service Page Media Queries */
+@media (max-width: 992px) {
+    .service-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .type-grid {
+        grid-template-columns: 1fr;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+    .page-title {
+        font-size: 36px;
     }
 }
