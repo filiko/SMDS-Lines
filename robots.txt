@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin area
+Disallow: /admin/
+Disallow: /public/admin/
+
+# Sitemap
+Sitemap: https://smdslines.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

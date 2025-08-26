@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site-settings"
+    label: "Site Settings"
+    files:
+      - file: "content/site-settings.md"
+        label: "Site Settings"
+        name: "site-settings"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Company Description", name: "description", widget: "text"}
+          - {label: "Business Phone", name: "phone", widget: "string"}
+          - {label: "Business Address", name: "address", widget: "string"}
+          - {label: "Business Email", name: "email", widget: "string"}
+          - {label: "Business Hours", name: "hours", widget: "string"}
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "content/services/drayage.md"
+        label: "Drayage Service"
+        name: "drayage"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/warehousing.md"
+        label: "Warehousing Service"
+        name: "warehousing"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/transloading.md"
+        label: "Transloading Service"
+        name: "transloading"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/supply-chain.md"
+        label: "Supply Chain Solutions"
+        name: "supply-chain"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/yard-services.md"
+        label: "Yard Services"
+        name: "yard-services"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/procurement.md"
+        label: "Procurement Service"
+        name: "procurement"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/ocean-freight.md"
+        label: "Ocean Freight Service"
+        name: "ocean-freight"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/services/project-logistics.md"
+        label: "Project Logistics Service"
+        name: "project-logistics"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
